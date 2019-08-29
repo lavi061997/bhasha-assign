@@ -4,8 +4,8 @@
 ### Usage
 
 ```
-git clone https://github.com/lavi061997/React-Redux-sample-tryhard.git
-cd tryhard-app
+git clone https://github.com/lavi061997/bhasha-assign.git
+cd bhasha-assignment
 npm install
 npm start
 open http://localhost:3000  (should start automatically )
