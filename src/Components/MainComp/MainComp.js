@@ -69,6 +69,7 @@ class MainComp extends Component {
 
     render() {
         const { classes } = this.props;
+        let { question_words, answer_words, isCorrect } = this.state;
         return (
             <div className={classes.root}>
                 <Grid container spacing={1}>
@@ -81,7 +82,7 @@ class MainComp extends Component {
                     <Grid className={classes.grid} item xs={12}>
                         <Paper className={classes.paper}>
                             {
-                                this.state.answer_words.map((answer_word, i) => (
+                                answer_words.map((answer_word, i) => (
                                     <Word key={i} word={answer_word}/>
                                 ))
                             }
@@ -90,15 +91,15 @@ class MainComp extends Component {
                     <Grid className={classes.grid} item xs={12}>
                         <Paper className={classes.paper}>
                             {
-                                this.state.question_words.map((question_word, i) => (
+                                question_words.map((question_word, i) => (
                                     <Word key={i} word={question_word} index={i} addToAnswerWords={this.addToAnswerWords} />
                                 ))
                             }
                             {
-                                this.state.question_words.length === 0 && this.state.isCorrect ? (
-                                    <div>Correct!</div>
-                                ) : this.state.question_words.length === 0 && !this.state.isCorrect ?  (
-                                    <div>InCorrect!</div>
+                                question_words.length === 0 && isCorrect ? (
+                                    <span>Correct!</span>
+                                ) : question_words.length === 0 && !isCorrect ?  (
+                                    <span>InCorrect!</span>
                                 ) : ''
                             }
                         </Paper>
